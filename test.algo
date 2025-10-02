@@ -1,0 +1,29 @@
+ALGORITHM sentence_count
+VAR
+   char_count: INTEGER := 0; //number of characters
+   word_count: INTEGER := 0; //number of words
+   vowel_count: INTEGER := 0; //number of vowels
+   sentence : STRING := "Hello world. This is a test sentence!";
+   i : INTEGER :=0;
+    
+BEGIN
+    WHILE (sentence[i] <> ".") DO
+        // count characters
+        char_count := char_count + 1;
+        // count words
+        IF(sentence[i] = " ") THEN
+            word_count := word_count + 1;
+        END_IF
+        // count vowels
+        IF(sentence[i] = "a" OR sentence[i] = "e" OR sentence[i] = "i" OR sentence[i] = "o" OR sentence[i] = "u" OR
+           sentence[i] = "A" OR sentence[i] = "E" OR sentence[i] = "I" OR sentence[i] = "O" OR sentence[i] = "U") THEN
+            vowel_count := vowel_count + 1;
+        END_IF
+
+        i := i + 1;
+    END_WHILE 
+    Write("character count: " + char_count + 1);
+    Write("word count: " + word_count + 1);
+    Write("vowel count: " + vowel_count);
+    
+END
